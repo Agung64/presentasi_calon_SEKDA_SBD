@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentasi Strategis - Mewujudkan Birokrasi Adaptif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .slide {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .slide-container {
+            width: 100%;
+            max-width: 1000px;
+            aspect-ratio: 16 / 9;
+            margin: auto;
+            position: relative;
+            background-color: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 86, 137, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 86, 137, 1);
+        }
+        #prevBtn { left: 15px; }
+        #nextBtn { right: 15px; }
+        .pagination {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #4A5568;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+
+        /* Custom Colors */
+        .sbd-blue { color: #005689; }
+        .sbd-green { color: #5E8C31; }
+        .sbd-gold { color: #D4AF37; }
+        .bg-sbd-blue { background-color: #005689; }
+        .bg-sbd-green { background-color: #5E8C31; }
+        .bg-sbd-gold { background-color: #D4AF37; }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.2s; }
+        .fade-in-delay-2 { animation-delay: 0.4s; }
+        .fade-in-delay-3 { animation-delay: 0.6s; }
+        .fade-in-delay-4 { animation-delay: 0.8s; }
+        
+        .tenun-bg {
+             background-image: url('https://placehold.co/1000x563/ffffff/e0e0e0?text=Motif+Tenun+Sumba');
+             background-size: cover;
+             background-position: center;
+        }
+        
+        .iceberg {
+            position: relative;
+            width: 100%;
+            height: 200px;
+        }
+        .iceberg-top {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 70px solid #A0AEC0;
+        }
+        .iceberg-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 120px;
+            background-color: #4A5568;
+            border-radius: 10px;
+        }
+        .water-line {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #4A90E2;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="slide-container">
+        <!-- Slide 1: Halaman Judul -->
+        <div id="slide1" class="slide active flex-col justify-center items-center text-center p-8 text-white bg-sbd-blue">
+            <h1 class="text-5xl font-black tracking-tight sbd-gold fade-in pt-12">MEWUJUDKAN BIROKRASI ADAPTIF</h1>
+            <p class="text-2xl mt-4 max-w-4xl fade-in fade-in-delay-1">Orkestrasi Konvergensi untuk Akselerasi Penurunan Stunting & Kemiskinan Ekstrem di Sumba Barat Daya</p>
+            <div class="mt-12 border-t-2 border-sbd-gold w-1/3 mx-auto pt-6 fade-in fade-in-delay-2">
+                <p class="text-xl font-bold">YENGO TADA KAWI, S.Pd</p>
+                <p class="text-md">Calon Sekretaris Daerah Kabupaten Sumba Barat Daya</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Agenda & Visi Utama -->
+        <div id="slide2" class="slide flex-col justify-center items-center p-12">
+            <h2 class="text-3xl font-bold sbd-blue mb-10 text-center">Agenda & Visi Utama</h2>
+            <div class="w-full flex justify-between items-start gap-12">
+                <div class="w-1/3 space-y-6">
+                    <div class="flex items-center gap-4 fade-in">
+                        <div class="bg-sbd-blue text-white p-3 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Masalah Fundamental</h3>
+                            <p class="text-sm text-gray-600">Mengapa ini penting?</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 fade-in fade-in-delay-1">
+                        <div class="bg-sbd-blue text-white p-3 rounded-full">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Gagasan Utama</h3>
+                            <p class="text-sm text-gray-600">Apa solusinya?</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 fade-in fade-in-delay-2">
+                        <div class="bg-sbd-blue text-white p-3 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Strategi Aksi</h3>
+                            <p class="text-sm text-gray-600">Bagaimana melakukannya?</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 fade-in fade-in-delay-3">
+                        <div class="bg-sbd-blue text-white p-3 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Peta Jalan</h3>
+                            <p class="text-sm text-gray-600">Kapan target tercapai?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-2/3 bg-sbd-green/10 p-8 rounded-2xl border-l-8 border-sbd-green fade-in fade-in-delay-4">
+                    <h3 class="text-xl font-bold sbd-green mb-4">VISI KITA</h3>
+                    <p class="text-3xl font-black text-gray-800 leading-tight">"Terwujudnya <span class="sbd-gold">Generasi Emas</span> Sumba Barat Daya yang Sehat, Cerdas, dan Sejahtera melalui Birokrasi yang Responsif dan Terintegrasi."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Masalah Fundamental -->
+        <div id="slide3" class="slide flex-col justify-center items-center p-12 text-center">
+            <h2 class="text-3xl font-bold sbd-blue mb-4">Akar Masalah: Ini Bukan Sekadar Krisis Gizi</h2>
+            <div class="w-full max-w-2xl mx-auto mt-6 fade-in">
+                <div class="iceberg">
+                    <div class="iceberg-top flex items-center justify-center">
+                        <div class="text-center text-gray-800 -mt-4">
+                            <h3 class="font-bold">GEJALA</h3>
+                             <p class="text-xs">Stunting & Kemiskinan</p>
+                        </div>
+                    </div>
+                     <div class="water-line"></div>
+                     <div class="iceberg-bottom flex items-center justify-center">
+                         <div class="text-center text-white p-4">
+                             <h3 class="font-bold text-lg mb-2">AKAR MASALAH: GAGAL TATA KELOLA</h3>
+                             <div class="flex justify-around text-xs gap-2">
+                                 <span>• Ego Sektoral</span>
+                                 <span>• Data Buta</span>
+                                 <span>• Monev Lemah</span>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-28 text-xl italic text-gray-700 fade-in fade-in-delay-1">"Kita tidak bisa menyelesaikan masalah sistemik dengan solusi parsial."</p>
+        </div>
+
+        <!-- Slide 4: Gagasan Utama -->
+        <div id="slide4" class="slide flex-col justify-center items-center p-12">
+            <h2 class="text-3xl font-bold sbd-blue text-center mb-10">Solusi Kita: Dari Birokrasi Kaku Menuju Adaptif</h2>
+            <div class="w-full flex justify-around items-center gap-10">
+                <div class="w-1/2 text-center p-6 border-2 border-red-300 rounded-lg bg-red-50 fade-in">
+                    <h3 class="text-2xl font-bold text-red-600 mb-4">KONDISI SAAT INI (KAKU)</h3>
+                    <div class="flex justify-center items-center gap-2 h-32">
+                        <div class="h-24 w-8 bg-gray-400 rounded"></div>
+                        <div class="h-24 w-8 bg-gray-400 rounded"></div>
+                        <div class="h-24 w-8 bg-gray-400 rounded"></div>
+                    </div>
+                    <p class="font-semibold">Bekerja Sendiri-sendiri</p>
+                    <p class="font-semibold">Anggaran Tersebar</p>
+                    <p class="font-semibold">Data Tumpang Tindih</p>
+                </div>
+                <div class="text-4xl font-bold sbd-blue fade-in fade-in-delay-1">➔</div>
+                <div class="w-1/2 text-center p-6 border-2 border-sbd-green rounded-lg bg-green-50 fade-in fade-in-delay-2">
+                    <h3 class="text-2xl font-bold sbd-green mb-4">KONDISI IDEAL (ADAPTIF)</h3>
+                    <div class="flex justify-center items-center gap-1 h-32">
+                        <svg class="w-24 h-24 text-sbd-green animate-spin" style="animation-duration: 5s;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <p class="font-semibold">Orkestrasi Terpusat</p>
+                    <p class="font-semibold">Anggaran Terintegrasi</p>
+                    <p class="font-semibold">Satu Data Sasaran</p>
+                </div>
+            </div>
+             <p class="mt-8 text-xl italic text-gray-700 fade-in fade-in-delay-3">"Bukan menambah program baru, tapi <span class="font-bold sbd-green">mengorkestrasi</span> yang sudah ada."</p>
+        </div>
+        
+        <!-- Slide 5: Peran Baru Sekda -->
+        <div id="slide5" class="slide flex-col justify-center items-center p-12 bg-gray-50">
+            <h2 class="text-3xl font-bold sbd-blue text-center mb-10">Transformasi Peran Sekretaris Daerah</h2>
+            <div class="w-full max-w-4xl flex justify-center items-center gap-6">
+                <!-- BEFORE Panel -->
+                <div class="w-2/5 text-center p-6 bg-white rounded-lg shadow-md border border-gray-200 fade-in">
+                    <h3 class="text-xl font-bold text-gray-500 mb-4">DARI: Administrator Prosedural</h3>
+                    <div class="flex justify-center items-center h-32">
+                        <svg class="w-24 h-24 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.5l6.75-6.75L15 12l5.25-5.25" transform="scale(0.5) translate(18, -5)"/>
+                        </svg>
+                    </div>
+                    <span class="inline-block bg-gray-200 text-gray-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Fokus Internal</span>
+                    <span class="inline-block bg-gray-200 text-gray-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Reaktif</span>
+                    <span class="inline-block bg-gray-200 text-gray-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">Menjaga Rutinitas</span>
+                </div>
+
+                <!-- Arrow -->
+                <div class="w-1/5 flex justify-center fade-in fade-in-delay-1">
+                    <svg class="w-20 h-20 text-sbd-green" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                </div>
+
+                <!-- AFTER Panel -->
+                <div class="w-2/5 text-center p-6 bg-sbd-blue/5 rounded-lg shadow-lg border-2 border-sbd-blue fade-in fade-in-delay-2">
+                    <h3 class="text-xl font-bold sbd-blue mb-4">MENJADI: Integrator Strategis</h3>
+                    <div class="flex justify-center items-center h-32">
+                         <svg class="w-24 h-24 text-sbd-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                         </svg>
+                    </div>
+                    <span class="inline-block bg-sbd-blue text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Orkestrator Lintas Sektor</span>
+                    <span class="inline-block bg-sbd-green text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Proaktif & Inovatif</span>
+                    <span class="inline-block bg-sbd-gold text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Berorientasi Dampak</span>
+                </div>
+            </div>
+            <p class="mt-8 text-lg italic text-gray-600 max-w-3xl text-center fade-in fade-in-delay-3">"Kepemimpinan strategis adalah tentang menghubungkan titik-titik yang terpisah menjadi sebuah gambar yang utuh."</p>
+        </div>
+
+        <!-- Slide 6: 4 Strategi Kunci -->
+        <div id="slide6" class="slide flex-col justify-center items-center p-12">
+            <h2 class="text-3xl font-bold sbd-blue text-center mb-10">Empat Pilar Strategi Aksi</h2>
+            <div class="grid grid-cols-2 grid-rows-2 gap-8 w-full max-w-4xl">
+                <div class="bg-sbd-blue/10 p-6 rounded-lg text-center fade-in">
+                    <div class="bg-sbd-blue text-white p-3 rounded-full mb-3 inline-block"><svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-2a6 6 0 00-12 0v2" /></svg></div>
+                    <h3 class="text-xl font-bold sbd-blue">KOLABORASI</h3>
+                    <p class="text-sm text-gray-700">Membentuk Satgas Pentahelix yang melibatkan akademisi, swasta, masyarakat, & media.</p>
+                </div>
+                <div class="bg-sbd-green/10 p-6 rounded-lg text-center fade-in fade-in-delay-1">
+                    <div class="bg-sbd-green text-white p-3 rounded-full mb-3 inline-block"><svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                    <h3 class="text-xl font-bold sbd-green">DATA AKURAT</h3>
+                    <p class="text-sm text-gray-700">Latih kader desa menjadi surveyor gizi berbasis aplikasi, didanai Dana Desa.</p>
+                </div>
+                <div class="bg-sbd-gold/20 p-6 rounded-lg text-center fade-in fade-in-delay-2">
+                    <div class="bg-sbd-gold text-white p-3 rounded-full mb-3 inline-block"><svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div>
+                    <h3 class="text-xl font-bold text-yellow-800">KEBERLANJUTAN</h3>
+                    <p class="text-sm text-gray-700">Lembagakan program melalui Peraturan Bupati (Perbup) agar permanen.</p>
+                </div>
+                <div class="bg-gray-600/10 p-6 rounded-lg text-center fade-in fade-in-delay-3">
+                     <div class="bg-gray-600 text-white p-3 rounded-full mb-3 inline-block"><svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 014-4h2a4 4 0 014 4v2m-6 4h6m-6-4H9a4 4 0 00-4 4v2m14-4V9a4 4 0 00-4-4H9a4 4 0 00-4 4v6" /></svg></div>
+                    <h3 class="text-xl font-bold text-gray-800">MITIGASI RISIKO</h3>
+                    <p class="text-sm text-gray-700">Mulai dari *Pilot Project* di 2-3 desa, buktikan, lalu replikasi.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Peta Jalan Jangka Pendek -->
+        <div id="slide7" class="slide flex-col justify-center p-12">
+            <h2 class="text-3xl font-bold sbd-blue text-center mb-10">TAHUN PERTAMA: Membangun Fondasi & Kemenangan Cepat</h2>
+            <div class="w-full">
+                <!-- Timeline bar -->
+                <div class="relative w-10/12 mx-auto h-1 bg-gray-300 rounded-full">
+                    <div class="absolute top-1/2 -translate-y-1/2 w-1/4 h-1 bg-sbd-blue"></div>
+                    <div class="absolute top-1/2 -translate-y-1/2 left-1/4 w-1/2 h-1 bg-sbd-green"></div>
+                    <div class="absolute top-1/2 -translate-y-1/2 left-3/4 w-1/4 h-1 bg-sbd-gold"></div>
+                </div>
+                <!-- Timeline events -->
+                <div class="relative w-10/12 mx-auto grid grid-cols-4 gap-4 mt-4 text-center">
+                    <div class="fade-in">
+                        <h4 class="font-bold text-lg sbd-blue">Q1 (PLAN)</h4>
+                        <p class="text-sm mt-2">✅ SK Satgas Terbit</p>
+                        <p class="text-sm">✅ Finalisasi RAD Konvergensi</p>
+                    </div>
+                    <div class="fade-in fade-in-delay-1">
+                        <h4 class="font-bold text-lg sbd-green">Q2-Q3 (DO)</h4>
+                        <p class="text-sm mt-2">🚀 Peluncuran Pilot Project</p>
+                        <p class="text-sm">📊 Dashboard Data Live</p>
+                    </div>
+                    <div class="fade-in fade-in-delay-2">
+                        <h4 class="font-bold text-lg sbd-green">Q2-Q4 (CHECK)</h4>
+                        <p class="text-sm mt-2">🔄 Rapat Evaluasi Bulanan</p>
+                         <p class="text-sm">🕵️‍♂️ Audit Lapangan</p>
+                    </div>
+                    <div class="fade-in fade-in-delay-3">
+                        <h4 class="font-bold text-lg sbd-gold">Q4 (ACT)</h4>
+                        <p class="text-sm mt-2">📖 Dokumen Praktik Baik</p>
+                        <p class="text-sm">📜 Rekomendasi Kebijakan</p>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-12 text-xl italic text-gray-700 text-center fade-in fade-in-delay-4">"Tahun pertama adalah tentang membangun <span class="font-bold sbd-blue">momentum</span> dan <span class="font-bold sbd-green">kepercayaan</span>."</p>
+        </div>
+
+        <!-- Slide 8: Peta Jalan Jangka Menengah -->
+        <div id="slide8" class="slide flex-col justify-center items-center p-12">
+            <div class="text-center fade-in w-full">
+                 <h2 class="text-3xl font-bold sbd-blue mb-10">TAHUN 2-4: Pelembagaan & Peningkatan Skala</h2>
+                 <div class="space-y-5 max-w-4xl mx-auto text-left">
+                     <div class="flex items-start gap-4 p-4 bg-green-50 rounded-lg shadow-sm">
+                        <span class="text-sbd-green text-3xl font-bold mt-1">✔</span>
+                        <div><strong class="text-gray-800 text-lg">Replikasi Program:</strong><br><span class="text-gray-700">Praktik baik yang terbukti berhasil diperluas ke seluruh kecamatan.</span></div>
+                     </div>
+                      <div class="flex items-start gap-4 p-4 bg-green-50 rounded-lg shadow-sm">
+                        <span class="text-sbd-green text-3xl font-bold mt-1">✔</span>
+                        <div><strong class="text-gray-800 text-lg">Integrasi Penuh:</strong><br><span class="text-gray-700">Dashboard data terhubung secara fungsional dengan sistem e-Planning & e-Budgeting.</span></div>
+                     </div>
+                      <div class="flex items-start gap-4 p-4 bg-green-50 rounded-lg shadow-sm">
+                        <span class="text-sbd-green text-3xl font-bold mt-1">✔</span>
+                        <div><strong class="text-gray-800 text-lg">Payung Hukum:</strong><br><span class="text-gray-700">Peraturan Bupati (Perbup) yang melembagakan program konvergensi secara permanen diterbitkan.</span></div>
+                     </div>
+                      <div class="flex items-start gap-4 p-4 bg-green-50 rounded-lg shadow-sm">
+                        <span class="text-sbd-green text-3xl font-bold mt-1">✔</span>
+                        <div><strong class="text-gray-800 text-lg">Hasil Nyata:</strong><br><span class="text-gray-700">Target penurunan stunting dan kemiskinan ekstrem sesuai RPJMD tercapai.</span></div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Peta Jalan Jangka Panjang -->
+        <div id="slide9" class="slide flex-col justify-center items-center p-12 bg-gray-50">
+            <div class="text-center fade-in w-full">
+                 <h2 class="text-3xl font-bold sbd-blue mb-10">TAHUN KE-5: Menjamin Keberlanjutan & Mewariskan Sistem</h2>
+                 <div class="space-y-5 max-w-4xl mx-auto text-left">
+                     <div class="flex items-start gap-4 p-4 bg-blue-50 rounded-lg shadow-sm">
+                        <span class="text-sbd-blue text-3xl font-bold mt-1">🏛️</span>
+                        <div><strong class="text-gray-800 text-lg">Pertanggungjawaban:</strong><br><span class="text-gray-700">Konsolidasi capaian untuk LKPJ Akhir Masa Jabatan.</span></div>
+                     </div>
+                      <div class="flex items-start gap-4 p-4 bg-blue-50 rounded-lg shadow-sm">
+                        <span class="text-sbd-blue text-3xl font-bold mt-1">📖</span>
+                        <div><strong class="text-gray-800 text-lg">Manajemen Pengetahuan:</strong><br><span class="text-gray-700">Terbitnya "Buku Putih" yang mendokumentasikan pembelajaran strategis.</span></div>
+                     </div>
+                      <div class="flex items-start gap-4 p-4 bg-blue-50 rounded-lg shadow-sm">
+                        <span class="text-sbd-blue text-3xl font-bold mt-1">📜</span>
+                        <div><strong class="text-gray-800 text-lg">Transisi Kepemimpinan:</strong><br><span class="text-gray-700">Tersusunnya Draf Teknokratik RPJMD untuk periode berikutnya.</span></div>
+                     </div>
+                 </div>
+                 <p class="mt-10 text-xl italic text-gray-700">"Keberhasilan sejati adalah ketika sistem yang baik terus berjalan, bahkan setelah kita tidak lagi memimpin."</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Proyeksi Dampak -->
+        <div id="slide10" class="slide flex-col justify-center items-center p-12">
+            <h2 class="text-3xl font-bold sbd-blue text-center mb-10">Apa Hasil Akhir yang Kita Harapkan?</h2>
+            <div class="flex justify-center items-center gap-8 w-full">
+                <div class="text-center w-1/3 p-4 bg-blue-100 rounded-lg fade-in">
+                    <h3 class="font-bold text-lg sbd-blue mb-2">BAGI MASYARAKAT</h3>
+                    <p class="text-sm">Anak Lebih Sehat & Cerdas</p>
+                    <p class="text-sm">Keluarga Keluar dari Kemiskinan</p>
+                    <p class="text-sm">Kualitas Hidup Meningkat</p>
+                </div>
+                 <div class="text-center w-1/3 p-4 bg-green-100 rounded-lg fade-in fade-in-delay-1">
+                    <h3 class="font-bold text-lg sbd-green mb-2">BAGI PEMDA</h3>
+                    <p class="text-sm">Efisiensi & Efektivitas APBD</p>
+                    <p class="text-sm">Tata Kelola Berbasis Bukti</p>
+                    <p class="text-sm">Capaian IPM Meningkat</p>
+                </div>
+                 <div class="text-center w-1/3 p-4 bg-yellow-100 rounded-lg fade-in fade-in-delay-2">
+                    <h3 class="font-bold text-lg text-yellow-800 mb-2">BAGI NASIONAL</h3>
+                    <p class="text-sm">Kontribusi pada Program Asta Cita</p>
+                    <p class="text-sm">Mempersiapkan Generasi Emas 2045</p>
+                </div>
+            </div>
+            <img src="https://placehold.co/600x200/ffffff/4a5568?text=Foto+Anak-anak+Sumba+yang+Ceria" class="mt-8 rounded-lg shadow-md fade-in fade-in-delay-3" alt="Anak-anak Sumba">
+        </div>
+
+        <!-- Slide 11: Kesimpulan & Ajakan Bertindak -->
+        <div id="slide11" class="slide flex-col justify-center items-center text-center p-12">
+            <h2 class="text-4xl font-black sbd-blue mb-8 fade-in">Mari Bergerak Bersama</h2>
+            <div class="text-lg space-y-3 max-w-3xl mb-12">
+                <p class="fade-in fade-in-delay-1">1. Masalah stunting & kemiskinan adalah <strong class="sbd-blue">masalah tata kelola.</strong></p>
+                <p class="fade-in fade-in-delay-2">2. Solusinya adalah <strong class="sbd-blue">Birokrasi Adaptif</strong> melalui <strong class="sbd-green">Konvergensi.</strong></p>
+                <p class="fade-in fade-in-delay-3">3. Peran <strong class="sbd-blue">Sekda sebagai Integrator</strong> adalah kunci.</p>
+                <p class="fade-in fade-in-delay-4">4. Peta jalan yang <strong class="sbd-green">jelas, terukur, dan realistis</strong> telah disiapkan.</p>
+            </div>
+            <div class="bg-sbd-blue/10 border-l-4 border-sbd-blue p-6 rounded-r-lg fade-in fade-in-delay-4">
+                <p class="text-xl italic font-semibold text-gray-800">"Ini bukan hanya sebuah rencana, tetapi sebuah komitmen untuk masa depan Sumba Barat Daya. Saya siap memimpin orkestrasi ini. Mohon dukungan Bapak/Ibu sekalian."</p>
+            </div>
+        </div>
+
+        <!-- Slide 12: Terima Kasih -->
+        <div id="slide12" class="slide flex-col justify-center items-center text-center p-8 text-white bg-sbd-blue">
+             <h2 class="text-6xl font-black mb-6 fade-in">Terima Kasih</h2>
+             <div class="fade-in fade-in-delay-1">
+                 <p class="text-2xl font-bold">YENGO TADA KAWI, S.Pd</p>
+                 <p class="text-lg">[Email / Nomor Telepon Anda]</p>
+             </div>
+             <p class="mt-12 text-lg italic max-w-3xl fade-in fade-in-delay-2">"Membangun Sumba Barat Daya adalah kerja gotong royong, dimulai dari niat, diperkuat oleh data, dan diwujudkan dengan kerja bersama."</p>
+        </div>
+
+        <!-- Navigation -->
+        <button id="prevBtn" class="nav-button">&lt;</button>
+        <button id="nextBtn" class="nav-button">&gt;</button>
+        <div id="pagination" class="pagination">1 / 12</div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 12;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => slide.classList.remove('active'));
+            document.getElementById(`slide${n}`).classList.add('active');
+            document.getElementById('pagination').innerText = `${n} / ${totalSlides}`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide % totalSlides) + 1;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 2 + totalSlides) % totalSlides + 1;
+            showSlide(currentSlide);
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
